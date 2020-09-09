@@ -1,21 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
+// Todos os imports sem um caminho especifico seram procurados diretamente dentro do "node_modules"
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+// Todos os imports com um caminho especifico seram procurados nos seus respectivos caminhos
+import Header from './src/components/Header'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default class App extends React.Component {
+  render() {
+    return (
+      <View>
+        <Header />
+      </View>
+    );
+  }
+}
