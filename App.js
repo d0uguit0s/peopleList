@@ -16,8 +16,10 @@ export default class App extends React.Component {
     ];
 
     const textElements = names.map(name => {
-      return <Text>{name}</Text>
+      return <Text key={name}>{name}</Text>
     });
+
+    // https://randomuser.me/api/?nat=br&results=5
 
     return textElements;
   }
