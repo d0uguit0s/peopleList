@@ -9,7 +9,38 @@ import Header from './src/components/Header'
 import axios from 'axios';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      people: []
+    };
+  }
+
+  componentDidMount() {
+    // Promises
+    /* 
+    Estados das promises:
+    resolved - Foi resolvida, ou seja, conseguiu realizar sua função
+    rejected - Foi rejeitada, ou seja, não conseguiu realizar sua função
+    pending - Está em espera, ou seja, ainda não confirmou se conseguiu realizar sua função
+
+    */
+    axios
+    .get('https://randomuser.me/api/?nat=br&results=10')
+    .then(response => {
+      const { results } = response.data;
+      this.setState({
+        people: results
+      });
+    })
+  }
+
   renderList() {
+    const textElements = this.state.people.map(person => {
+      const { first } = person.name;
+      return <Text key={ first }>{ first }</Text>;
+    });
     // const names = [
     //   'Eddie Van Halen',
     //   'Jimi Hendrix',
@@ -21,23 +52,14 @@ export default class App extends React.Component {
     //   return <Text key={name}>{name}</Text>
     // });
 
-    // Promisses
-    axios
-      .get('https://randomuser.me/api/?nat=br&results=5')
-      .then(response => {
-        const { results } = response.data
-        const names = results.map(people => people.name.first)
-        console.log(names);
-      })
-
-    // return textElements;
+    return textElements;
   }
 
   render() {
     return (
       <View>
         <Header title="Pessoas!" />
-        { this.renderList() }
+        {this.renderList()}
       </View>
     );
   }
