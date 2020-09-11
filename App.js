@@ -4,7 +4,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 // Todos os imports com um caminho especifico seram procurados nos seus respectivos caminhos
-import Header from './src/components/Header'
+import Header from './src/components/Header';
+import PeopleList from './src/components/PeopleList';
 
 import axios from 'axios';
 
@@ -36,30 +37,24 @@ export default class App extends React.Component {
     })
   }
 
-  renderList() {
-    const textElements = this.state.people.map(person => {
-      const { first } = person.name;
-      return <Text key={ first }>{ first }</Text>;
-    });
-    // const names = [
-    //   'Eddie Van Halen',
-    //   'Jimi Hendrix',
-    //   'Chimbinha',
-    //   'Steve Vai'
-    // ];
+  // renderList() {
+  //   const names = [
+  //     'Eddie Van Halen',
+  //     'Jimi Hendrix',
+  //     'Chimbinha',
+  //     'Steve Vai'
+  //   ];
 
-    // const textElements = names.map(name => {
-    //   return <Text key={name}>{name}</Text>
-    // });
-
-    return textElements;
-  }
+  //   const textElements = names.map(name => {
+  //     return <Text key={name}>{name}</Text>
+  //   });
+  // }
 
   render() {
     return (
       <View>
         <Header title="Pessoas!" />
-        {this.renderList()}
+        <PeopleList people={this.state.people} />
       </View>
     );
   }
