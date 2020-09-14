@@ -22,7 +22,6 @@ const Header = (props) => (
 // StyleSheet.create ajuda a otimizar as correções de erros no estilo do app e a performance em geral
 const style = StyleSheet.create({
     container: {
-        marginTop: 20,
         backgroundColor: '#6ca2f7',
         alignItems: 'center',
         justifyContent: 'center',
