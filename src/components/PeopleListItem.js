@@ -1,13 +1,22 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
+// Aqui o node irá procurar o arquivo "index.js" dentro do diretório "util"
+import { capitalizeFirstLetter } from  '../util';
+
 const PeopleListItem = props => {
     const { person } = props;
-    const { first, last } = person.name;
+    const { title, first, last } = person.name;
+    let titulo;
+    if(title == 'Mr'){
+        titulo = "Sr";
+    }else{
+        titulo = "Sra";
+    }
     return(
         <View style={styles.line}>
             <Text style={styles.lineText}>
-                { first }
+                { `${capitalizeFirstLetter(titulo)}. ${first} ${last}` }
             </Text>
         </View>
     );
