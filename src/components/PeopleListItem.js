@@ -35,11 +35,15 @@ const styles = StyleSheet.create({
     lineText: {
         fontSize: 20,
         paddingLeft: 15,
+        flex: 7
     },
     avatar: {
         // O aspectRatio mantém as proporções originais da imagem, ou seja, uma img de 40X40 se for aumentada para 50 de largura ficará 50X50
         aspectRatio: 1,
-        width: 40
+        flex: 1,
+
+        marginLeft: 15,
+        borderRadius: 50,
     },
 });
 
