@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 // Aqui o node irá procurar o arquivo "index.js" dentro do diretório "util"
 import { capitalizeFirstLetter } from  '../util';
@@ -14,12 +14,16 @@ const PeopleListItem = props => {
         titulo = "Sra";
     }
     return(
-        <View style={styles.line}>
-            <Image style={styles.avatar} source={{ uri: person.picture.thumbnail }} />
-            <Text style={styles.lineText}>
-                { `${capitalizeFirstLetter(titulo)}. ${first} ${last}` }
-            </Text>
-        </View>
+        <TouchableOpacity onPress={() => {
+            
+        }}>
+            <View style={styles.line}>
+                <Image style={styles.avatar} source={{ uri: person.picture.thumbnail }} />
+                <Text style={styles.lineText}>
+                    { `${capitalizeFirstLetter(titulo)}. ${first} ${last}` }
+                </Text>
+            </View>
+        </TouchableOpacity>
     );
 }
 
