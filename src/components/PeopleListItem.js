@@ -5,7 +5,7 @@ import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { capitalizeFirstLetter } from  '../util';
 
 const PeopleListItem = props => {
-    const { person } = props;
+    const { person, navigateToPeopleDetail } = props;
     const { title, first, last } = person.name;
     let titulo;
     if(title == 'Mr'){
@@ -14,9 +14,7 @@ const PeopleListItem = props => {
         titulo = "Sra";
     }
     return(
-        <TouchableOpacity onPress={() => {
-            
-        }}>
+        <TouchableOpacity onPress={() => navigateToPeopleDetail() }>
             <View style={styles.line}>
                 <Image style={styles.avatar} source={{ uri: person.picture.thumbnail }} />
                 <Text style={styles.lineText}>
