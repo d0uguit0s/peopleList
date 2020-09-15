@@ -9,8 +9,27 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Main" component={PeoplePage} />
+      <Stack.Navigator
+        screenOptions={
+          {
+            title: 'Pessoas!',
+            headerStyle: {
+              backgroundColor: '#6ca2f7',
+              borderBottomWidth: 3.5,
+              borderBottomColor: 'rgba(0, 0, 0, 0.2)'
+            },
+            headerTitleStyle: {
+              fontSize: 30,
+              color: '#fff',
+            },
+            headerTitleAlign: 'center',
+          }
+        }
+      >
+        <Stack.Screen
+          name="Main"
+          component={PeoplePage}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

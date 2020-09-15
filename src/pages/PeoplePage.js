@@ -53,7 +53,6 @@ export default class PeoplePage extends React.Component {
   render() {
     return (
       <View>
-        <Header title="Pessoas!" />
         <PeopleList people={this.state.people} />
       </View>
     );
