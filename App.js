@@ -11,10 +11,12 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName='Home'
+        initialRouteName='Main'
+        // screenOptions - Define o estilo de todas as telas dentro do react navigation 
         screenOptions={
           {
             title: 'Pessoas!',
+            headerTintColor: '#fff',
             headerStyle: {
               backgroundColor: '#6ca2f7',
               borderBottomWidth: 3.5,
@@ -35,6 +37,13 @@ function App() {
         <Stack.Screen 
           name="PeopleDetail"
           component={PeopleDetailPage}
+          // options - Define o estilo de uma tela especifica do react navigation
+          options={({route}) => {
+            const personName = route.params.person.name.first
+            return ({
+              title: personName
+            });
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

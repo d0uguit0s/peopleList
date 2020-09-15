@@ -14,7 +14,7 @@ const PeopleListItem = props => {
         titulo = "Sra";
     }
     return(
-        <TouchableOpacity onPress={() => navigateToPeopleDetail() }>
+        <TouchableOpacity onPress={() => navigateToPeopleDetail({ person }) }>
             <View style={styles.line}>
                 <Image style={styles.avatar} source={{ uri: person.picture.thumbnail }} />
                 <Text style={styles.lineText}>
