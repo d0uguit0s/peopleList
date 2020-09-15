@@ -19,8 +19,8 @@ function App() {
             headerTintColor: '#fff',
             headerStyle: {
               backgroundColor: '#6ca2f7',
-              borderBottomWidth: 3.5,
-              borderBottomColor: 'rgba(0, 0, 0, 0.2)'
+              borderBottomWidth: 3,
+              borderBottomColor: 'rgba(0, 0, 0, 0.1)'
             },
             headerTitleStyle: {
               fontSize: 30,
