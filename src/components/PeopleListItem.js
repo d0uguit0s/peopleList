@@ -14,22 +14,28 @@ const PeopleListItem = props => {
         titulo = "Sra";
     }
     return(
-        <TouchableOpacity onPress={() => navigateToPeopleDetail({ person }) }>
-            <View style={styles.line}>
-                <Image style={styles.avatar} source={{ uri: person.picture.thumbnail }} />
-                <Text style={styles.lineText}>
-                    { `${capitalizeFirstLetter(titulo)}. ${first} ${last}` }
-                </Text>
-            </View>
-        </TouchableOpacity>
+        <View style={styles.borderLine}>
+            <TouchableOpacity onPress={() => navigateToPeopleDetail({ person }) }>
+                <View style={styles.line}>
+                    <Image style={styles.avatar} source={{ uri: person.picture.thumbnail }} />
+                    <Text style={styles.lineText}>
+                        { `${capitalizeFirstLetter(titulo)}. ${first} ${last}` }
+                    </Text>
+                </View>
+            </TouchableOpacity>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
-    line: {
-        height: 60,
+    borderLine: {
         borderBottomWidth: 1,
         borderColor: '#bbb',
+    },
+    line: {
+        height: 60,
+        // borderBottomWidth: 1,
+        // borderColor: '#bbb',
 
         alignItems: 'center',
         flexDirection: 'row',

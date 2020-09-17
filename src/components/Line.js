@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         borderColor: '#C5C5C5'
     },
     cell: {
-        fontSize: 18,
+        fontSize: 16,
         paddingLeft: 5,
     },
     label: {
